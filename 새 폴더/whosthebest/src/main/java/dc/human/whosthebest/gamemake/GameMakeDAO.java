@@ -9,8 +9,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import dc.human.whosthebest.dbConnect.DBConnectionManager;
 import dc.human.whosthebest.dto.GameDTO;
 import dc.human.whosthebest.dto.StadiumDTO;
+import dc.human.whosthebest.dto.TeamMemberDTO;
 
 public class GameMakeDAO {
 	
@@ -25,13 +27,14 @@ public class GameMakeDAO {
 	
 	//생자 및 oracle 연결
 	public GameMakeDAO() {
-		try {
-			Context ctx = new InitialContext();
-			Context envContext = (Context) ctx.lookup("java:/comp/env");
-			dataFactory = (DataSource) envContext.lookup("jdbc/oracle");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+	}
+	
+	public TeamMemberDTO selectTeam(String uID) {
+		TeamMemberDTO teamMemberDTO = new TeamMemberDTO();
+		
+		
+		return teamMemberDTO;
 	}
 	
 	//sRegion 선택 시 그 지역에 해당 하는 StadiumDTO 객체를 생성하여 stadiumList에 추가 메소드
@@ -41,7 +44,7 @@ public class GameMakeDAO {
 		ArrayList<StadiumDTO> stadiumList = new ArrayList<>();
 		System.out.println("search: " + search);
 		try {
-			con = dataFactory.getConnection();
+			con = DBConnectionManager.getConnection();
 			System.out.println(sRegion + " dao");
 
 			if ("전체".equals(sRegion) && (search == null || search.isEmpty())) {
@@ -99,7 +102,7 @@ public class GameMakeDAO {
 		System.out.println("sID : " + sID);
 		StadiumDTO stadiumDTO = null;
 		try {
-			con = dataFactory.getConnection();
+			con = DBConnectionManager.getConnection();
 			sql = "SELECT s_id, s_name, s_region, s_addr, s_owner, s_phone, s_num from stadium where s_id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, sID);
@@ -129,25 +132,33 @@ public class GameMakeDAO {
 		return stadiumDTO;
 	}
 	
-	public int registGame(String gTitle, String gTag, int gTime, String gInfo, int gMinMember, String gResTime,
-		String gResDate, int sID, int sNum) {
+	public int registGame(int gTeamID, String gTitle, String gTag, int gTime,
+			String gInfo, int gMinMember, String gResTime, String gResDate, int tID, int tAwayID, int sID,
+			int sNum, String createdID, String updateID) {
 		String sql = null;
 		try {
-			con = dataFactory.getConnection();
+			con = DBConnectionManager.getConnection();
 			sql = "INSERT INTO GAME " +
-					"(G_TITLE, G_TAG, G_TIME, G_INFO, "
-					+ "G_MINMEMBER, G_RESTIME, G_RESDATE, S_ID, S_NUM) "
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+					"(G_TEAMID, G_TITLE, G_TAG, G_TIME, G_INFO, "
+					+ "G_MINMEMBER, G_RESTIME, G_RESDATE, G_STATUS, T_ID, T_AWAYID, S_ID, S_NUM, "
+					+ "CREATED_ID, UPDATED_ID) "
+					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, gTitle);
-			pstmt.setString(2, gTag);
-			pstmt.setInt(3, gTime);
-			pstmt.setString(4, gInfo);
-			pstmt.setInt(5, gMinMember);
-			pstmt.setString(6, gResTime);
-			pstmt.setString(7, gResDate);
-			pstmt.setInt(8, sID);
-			pstmt.setInt(9, sNum);
+			pstmt.setInt(1, gTeamID);
+			pstmt.setString(2, gTitle);
+			pstmt.setString(3, gTag);
+			pstmt.setInt(4, gTime);
+			pstmt.setString(5, gInfo);
+			pstmt.setInt(6, gMinMember);
+			pstmt.setString(7, gResTime);
+			pstmt.setString(8, gResDate);
+			pstmt.setInt(9, 0);
+			pstmt.setInt(10, tID);
+			pstmt.setInt(11, tAwayID);
+			pstmt.setInt(12, sID);
+			pstmt.setInt(13, sNum);
+			pstmt.setString(14, createdID);
+			pstmt.setString(15, updateID);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

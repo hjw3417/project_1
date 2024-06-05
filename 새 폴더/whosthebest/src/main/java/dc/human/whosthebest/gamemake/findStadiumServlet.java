@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/findstadium")
-public class findStadiumServlet extends HttpServlet {
+public class FindStadiumServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 

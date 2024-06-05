@@ -67,16 +67,32 @@ CREATE TABLE board (
     updated_date VARCHAR2(20)
 );
 
-CREATE TABLE team_member (
-    t_id NUMBER(10),
-    u_id VARCHAR2(12),
-    u_status NUMBER(1),
+CREATE TABLE team (
+    t_id NUMBER(10) PRIMARY KEY,
+    t_name VARCHAR2(30),
+    t_logo BLOB,
+    t_region VARCHAR2(10),
+    t_phone VARCHAR2(11),
+    rankscore NUMBER(4),
+    t_minage NUMBER(2),
+    t_maxage NUMBER(2),
+    t_maxmember NUMBER(2) DEFAULT 30,
+    t_member NUMBER(2),
+    t_info VARCHAR2(100),
     created_id VARCHAR2(12),
     created_date VARCHAR2(20),
     updated_id VARCHAR2(12),
-    updated_date VARCHAR2(20),
-    PRIMARY KEY (t_id, u_id)
+    updated_date VARCHAR2(20)
 );
+
+-- team_member 테이블에 데이터 삽입
+INSERT INTO team_member (t_id, u_id, u_status, created_id, created_date, updated_id, updated_date) VALUES (1000000001, 'heo', 1, 'admin', '2024-06-01', 'admin', '2024-06-01');
+INSERT INTO team_member (t_id, u_id, u_status, created_id, created_date, updated_id, updated_date) VALUES (1000000002, 'heo', 1, 'admin', '2024-06-02', 'admin', '2024-06-02');
+INSERT INTO team_member (t_id, u_id, u_status, created_id, created_date, updated_id, updated_date) VALUES (1000000003, 'heo', 1, 'admin', '2024-06-03', 'admin', '2024-06-03');
+INSERT INTO team_member (t_id, u_id, u_status, created_id, created_date, updated_id, updated_date) VALUES (1000000004, 'heo', 1, 'admin', '2024-06-04', 'admin', '2024-06-04');
+INSERT INTO team_member (t_id, u_id, u_status, created_id, created_date, updated_id, updated_date) VALUES (1000000005, 'heo', 1, 'admin', '2024-06-05', 'admin', '2024-06-05');
+
+
 
 
 drop table game;
@@ -92,6 +108,11 @@ MODIFY g_id NUMBER DEFAULT g_sequence.nextval;
 
 ALTER TABLE game
 MODIFY g_createdate VARCHAR2(20) DEFAULT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS');
+ALTER TABLE game
+MODIFY created_date VARCHAR2(20) DEFAULT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS');
+ALTER TABLE game
+MODIFY updated_date VARCHAR2(20) DEFAULT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS');
+ALTER TABLE game MODIFY (g_teamid NUMBER(10));
 
 CREATE TABLE game (
     g_id NUMBER(10) PRIMARY KEY,

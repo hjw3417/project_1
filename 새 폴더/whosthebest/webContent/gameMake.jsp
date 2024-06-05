@@ -7,7 +7,14 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>   
-
+<%
+	session.setAttribute("gTeamID", 123);
+	session.setAttribute("tID", 1);
+	session.setAttribute("tAwayID", 1);
+	session.setAttribute("createdID", "1");
+	session.setAttribute("updateID", "1");
+	
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -81,8 +88,12 @@
 <%
 				} else {
 %>
-                <a href="resStadium.jsp" name="sID" value="<%=session.getAttribute("sID")  %>" >
+                <a href="resStadium.jsp" name="sID" value="<%=session.getAttribute("sID")%>">
                 <%=session.getAttribute("sName")  %>
+                <%
+                System.out.println("여기 : " + session.getAttribute("sID"));
+                System.out.println("여기 : " + session.getAttribute("sName"));
+                %>
                 </a>
 <%
 				}
@@ -103,7 +114,7 @@
 %>
         <input type="hidden" id="gResDate" name="gResDate" value="<%=session.getAttribute("gResDate") %>">
         <span id="gResDate"><%=session.getAttribute("gResDate") %></span>
-        <input type="hidden" id="sTime" name="sTime" value="<%=session.getAttribute("sTime") %>">
+        <input type="hidden" id="sTime" name="gResTime" value="<%=session.getAttribute("sTime") %>">
         <span id="sTime"><%=session.getAttribute("sTime") %></span> : 00
 <%
 	}
@@ -165,7 +176,7 @@
 
             <tr>
               <td colspan="3">
-                <input type="text" name="" placeholder="참여 인원 설정하기">
+                <input type="text" name="gMinMember" placeholder="참여 인원 설정하기">
               </td>
             </tr>
             <tr>
