@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>경기 만들기</title>
+  <script>
+    function adjustTime(input) {
+        let value = input.value;
+        if (value) {
+            let [hours, minutes] = value.split(':');
+            if (minutes !== '00') {
+                input.value = `${hours}:00`;
+            }
+        }
+    }
+</script>
+</head>
+<body>
+<header>
+   <div class="logo">
+     <img src="../image/logo.png">
+   </div>
+   <div>
+     <span><a href="#">로그아웃</a>&nbsp;&nbsp;|&nbsp;</span>
+     <span><a href="#">마이페이지</a></span>
+   </div>
+   <div>
+     <ul>
+       <li>
+         <a href="#">팀</a>
+         <div>
+           <ul>
+             <li><a href="#">팀 목록</a></li>
+             <li><a href="#">나의 팀</a></li>
+           </ul>
+         </div>
+       </li>
+       <li><a href="#">경기 목록</a></li>
+       <li><a href="#">경기장 목록</a></li>
+       <li><a href="#">랭킹</a></li>
+       <li><a href="#">게시판</a></li>
+     </ul>
+   </div>
+ </header>
+  <main style="text-align: center; height: 700px;">
+    <div style="height: 70px;">　</div>
+    <section>
+      <table class="resStadiumTable">
+        <tr>
+            <td style="width: 200px;">
+              <select name="selectTeam">
+                <option selected>지역 선택하기</option>
+                <option>서울</option>
+                <option>경기</option>
+                <option>충남</option>
+                <option>충북</option>
+                <option>대전</option>
+                <option>대구</option>
+                <option>경북</option>
+                <option>경남</option>
+                <option>울산</option>
+                <option>부산</option>
+                <option>전남</option>
+                <option>전북</option>
+                <option>광주</option>
+                <option>강원</option>
+              </select>
+            </td>
+            <td ></td>
+            <td colspan="3">
+              <input type="text" placeholder="팀, 경기 명 및 해시태그로 경기 검색">
+            </td>
+            <td style="width: 30px;">
+              <input type="submit" value="검색">
+            </td>
+            <td style="width: 50px;"></td>
+          </tr>
+          <tr style="height: 50px;"></tr>
+          <tr>
+            <td colspan="2" style="border: 2pt solid rgb(184, 206, 146);">
+              <ul>
+                <li>천안 축구 센터</li>
+                <li>서북구청 축구장</li>
+                <li>대한민국 축구 종합 센터</li>
+                <li>JoneFC 축구 아카데미</li>
+                <li>천안 SDI점 축구장</li>
+              </ul>
+            </td>
+            <td colspan="4" style="border: 2pt solid rgb(184, 206, 146);">
+              <ul>
+                <li>주소 : 천안 서북구 번영로 486</li>
+                <li>관리주체 : 천안시</li>
+                <li>연락처 : 010-3417-6687</li>
+              </ul>
+            </td>
+          </tr>
+          <tr><td rowspan="5" style="width: 200px;"></td></tr>
+          <tr>
+            <td colspan="3" style="text-align: left;">
+              예약일 : 
+            </td>
+            <td>
+              <input type="date" style="width: 200px;">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: left;">
+              시작 시작 : 
+              </td>
+              <td>
+              <select style="width: 200px;">
+                <option>08 : 00</option>
+                <option>09 : 00</option>
+                <option>10 : 00</option>
+                <option>11 : 00</option>
+                <option>12 : 00</option>
+                <option>01 : 00</option>
+                <option>02 : 00</option>
+                <option>03 : 00</option>
+                <option>04 : 00</option>
+                <option>05 : 00</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: left;">
+              종료 시작 : 
+            </td>
+            <td>
+              <select style="width: 200px;">
+                <option>08 : 00</option>
+                <option>09 : 00</option>
+                <option>10 : 00</option>
+                <option>11 : 00</option>
+                <option>12 : 00</option>
+                <option>01 : 00</option>
+                <option>02 : 00</option>
+                <option>03 : 00</option>
+                <option>04 : 00</option>
+                <option>05 : 00</option>
+              </select>
+            </td>
+          </tr>
+         <tr style="text-align: right;">
+          <td colspan="3" style="text-align: left;">
+            <label>경기장 선택 : </label>
+          </td>
+          <td>
+            <select style="width: 200px;">
+              <option>1 경기장</option>
+              <option>2 경기장</option>
+              <option>3 경기장</option>
+            </select>
+          </td>
+         </tr>
+        <tr>
+          <td colspan="5" style="text-align: right; height: 50px;">
+            <a>뒤로가기</a>
+          </td>
+          <td colspan="2" style="text-align: right;"><a>선택완료</a></td>
+          <td></td>
+        </tr>     
+    </table>
+    </section>
+  </main>
+
+
+  <footer>
+    <div>
+      <ul>
+        <li><a href="#">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+        <li><a href="#">개인정보처리방침</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+        <li><a href="#">오류/건의</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+        <li><a href="#">광고/후원문의</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+        <li><a href="#">고객센터</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+        <li><a href="#">&copy;누가잘차</a></li>
+      </ul>
+    </div>
+    <div>&copy;2024.MunjuGangz All rights reserved.</div>
+  </footer>
+</body>
+</html>

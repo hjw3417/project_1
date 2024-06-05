@@ -1,0 +1,228 @@
+@charset "UTF-8";
+body{margin: 0 auto;}
+header{
+  margin: 0 auto;
+  >div:first-child{
+    text-align: center;
+
+    >img{
+      justify-content: center;
+      width: 197px;
+      height: 60px;
+    }
+  }
+  >div:nth-child(2){
+    text-align: right;
+    position: relative;
+    right: 2%;
+    top: 5px;
+    margin-top: -37px;
+    font-size: 13px;
+    
+    >span>a{
+      text-decoration-line: none;
+      color: black;
+    }
+  }
+  >div:nth-child(3){
+    height: 50px;
+    background-color: rgb(146, 172, 101);
+
+    >ul{
+      text-align: center;
+      >li{
+        text-align: center;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 150px;
+        height: 50px;
+        line-height: 40px;
+        cursor: pointer;
+        font-size: 30px;
+        >a{
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: bold;
+          color: white;
+          
+        }
+        >div{
+          text-align: center;
+          display: none;
+          position: absolute;
+          left: 0px;
+          top: 110px;
+          width: 100%;
+          background-color: rgb(184, 206, 146);
+          z-index: 1;
+          >ul{
+            height: 50px;
+            >li{
+              display: inline-block;
+              width: 150px;
+              >a{
+                font-size: 15px;
+                font-weight: bold;
+                color: white;
+                text-decoration-line: none;
+              }
+              >a:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      >li:hover>div{
+        display: block;
+      }
+    }
+  }
+}
+main{
+  margin: 0 auto;
+  height: 750px;
+  background-color: rgb(255, 255, 234);
+  >div:first-child{
+    height: 50px;
+  }
+  >div:nth-child(2){
+    display: inline-block;
+  }
+}
+section{
+  display: inline-block;
+}
+.side{
+  margin-top: -50px;
+  width: 250px;
+  height: 750px;
+  background-color: rgb(184, 206, 146);
+  >div>div:first-child{
+    height: 50px;
+  }
+}
+
+
+
+
+footer{
+  text-align: center;
+  margin: 0 auto;
+  height: 80px;
+  background-color: rgb(146, 172, 101);
+  >div:first-child>ul{
+    margin: 0 auto;
+    >li{
+      margin-top: 15px;
+      display: inline-block;
+      font-size: 13px;
+      color: rgb(63, 60, 60);
+      >a{
+        color: rgb(63, 60, 60);
+        text-decoration-line: none;
+        font-weight: bold;
+        
+      }
+      >a:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  >div:nth-child(2){
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(63, 60, 60);
+  }
+}
+
+.inputTable {
+  width: 450px;
+  height: 650px;
+  text-align: center;
+  td {
+    padding: 0px;
+  }
+  a {
+  text-decoration-line: none;
+  color: black;
+  }
+  input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  border: 2pt solid rgb(184, 206, 146);
+  padding: 10px; /* Optional padding */
+  margin: 0;
+  cursor: pointer;
+  }
+  input:focus {outline: none;}
+  select {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+      border: 2pt solid rgb(184, 206, 146);
+      padding: 10px; /* Optional padding */
+      margin: 0;
+      cursor: pointer;
+      
+  }
+  
+  textarea {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+      border: 1pt solid rgb(184, 206, 146);
+      padding: 10px; /* Optional padding */
+      margin: 0;
+      cursor: pointer;
+}
+
+}
+
+.resStadiumTable {
+  width: 700px;
+  td {
+
+    text-align: left;
+  }
+  ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 5px;
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    border: 2pt solid rgb(184, 206, 146);
+    padding: 10px; /* Optional padding */
+    margin: 0;
+    cursor: pointer;
+    }
+    input:focus {outline: none;}
+    select {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        border: 2pt solid rgb(184, 206, 146);
+        padding: 10px; /* Optional padding */
+        margin: 0;
+        cursor: pointer;
+    }
+    .a-button {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+      padding: 10px; /* Optional padding */
+      margin: 0;
+      cursor: pointer;
+      background-color: rgb(184, 206, 146);
+      text-decoration-line: none;
+      color: black;
+    }
+    .studiumInfo {
+      cursor: pointer;
+    }
+}

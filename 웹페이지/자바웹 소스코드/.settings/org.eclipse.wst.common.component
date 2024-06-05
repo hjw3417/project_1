@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="자바웹 소스코드">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/bookShop01/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/myboot01/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/myboot01/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/myboot02/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/myboot02/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/myboot03/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/myboot03/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro01/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro05/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro06/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro07/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro08/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro09/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro10/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro12/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro13/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro14/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro15/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro16/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro17/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro19/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro20/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro21/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro22/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro23/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro24/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro25/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro26/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro27/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro28/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro29/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/pro30/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/006895/rateServer/src"/>
+        <property name="context-root" value="자바웹_소스코드"/>
+        <property name="java-output-path" value="/자바웹 소스코드/006895/myboot02/bin/main"/>
+    </wb-module>
+</project-modules>
